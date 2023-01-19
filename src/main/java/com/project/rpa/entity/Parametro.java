@@ -50,6 +50,4 @@ public class Parametro {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "parametro", cascade = {CascadeType.ALL})
     private Set<DetalleParametro> detalleParametro;
 
-    
-    
 }
