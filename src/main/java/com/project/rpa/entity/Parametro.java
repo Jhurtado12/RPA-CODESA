@@ -47,7 +47,7 @@ public class Parametro {
     
     /*Relaciones*/
     @JsonManagedReference
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "parametro", cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "parametro", cascade = {CascadeType.ALL})
     private Set<DetalleParametro> detalleParametro;
 
 }

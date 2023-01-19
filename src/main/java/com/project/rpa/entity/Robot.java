@@ -73,7 +73,7 @@ public class Robot {
 
     /*Relacion con usuarios*/    
     @JsonManagedReference
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "robot4", cascade = {CascadeType.ALL})
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "robot", cascade = {CascadeType.ALL})
     private Set<RobotUsuario> robotUsuarios;
   
 }

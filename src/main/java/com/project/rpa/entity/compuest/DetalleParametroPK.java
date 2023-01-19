@@ -35,13 +35,16 @@ public class DetalleParametroPK implements Serializable{
     @Column(name = "idDetalleParametro")
     private Long id;
     
+ 
     @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "robot_idRobot", insertable = false, updatable = false)
+    @JoinColumn(name = "robot_idRobot")
     private Robot robot;
+
     
-    @JsonBackReference
+    
+    @JsonBackReference    
     @ManyToOne  
-    @JoinColumn(name = "parametro_idParametro", insertable = false, updatable = false)
+    @JoinColumn(name = "parametro_idParametro")
     private Parametro parametro;
 }
