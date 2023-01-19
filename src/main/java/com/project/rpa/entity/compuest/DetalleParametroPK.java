@@ -10,6 +10,7 @@ import com.project.rpa.entity.Robot;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
@@ -38,13 +39,13 @@ public class DetalleParametroPK implements Serializable{
  
     @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "robot_idRobot")
+    @JoinColumn(name = "robot_idRobot", insertable = false, updatable = false)
     private Robot robot;
 
     
     
     @JsonBackReference    
     @ManyToOne  
-    @JoinColumn(name = "parametro_idParametro")
+    @JoinColumn(name = "parametro_idParametro", insertable = false, updatable = false)
     private Parametro parametro;
 }
