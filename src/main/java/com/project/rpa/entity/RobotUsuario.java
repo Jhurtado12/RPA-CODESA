@@ -4,9 +4,17 @@
  */
 package com.project.rpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.project.rpa.entity.compuest.RobotUsuarioPK;
+
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,10 +37,23 @@ import lombok.ToString;
 @ToString
 public class RobotUsuario {
     
-    @EmbeddedId
-    private RobotUsuarioPK id;
+   //@EmbeddedId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idRobotUsusario")
+    private Long id;
+   //private RobotUsuarioPK id;
     
     private Character estado;
+
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "usuario_idUsuario")
+    private Usuario usuario;
     
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "robot_idRobot", insertable = false, updatable = false)
+    private Robot robot;
 
 }

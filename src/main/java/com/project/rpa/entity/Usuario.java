@@ -79,7 +79,7 @@ public class Usuario {
 
     @JsonBackReference
     @ManyToOne
-    @JoinColumn(name = "area_idArea", insertable = false, updatable = false)
+    @JoinColumn(name = "area_idArea")
     private Area area;
 
 }

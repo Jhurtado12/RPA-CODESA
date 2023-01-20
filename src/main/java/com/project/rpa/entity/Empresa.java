@@ -44,10 +44,10 @@ public class Empresa {
     
     private String nombre;
 
-    private Character estado;
+   // private Character estado;
     
     @JsonManagedReference
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "empresa", cascade = {CascadeType.ALL})
-    private Set<Usuario> usuarios;    
+    private Set<Usuario> usuarios;
    
 }

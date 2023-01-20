@@ -49,5 +49,4 @@ public class Area {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "area", cascade = {CascadeType.ALL})
     private Set<Usuario> usuarios;
     
-    
 }
