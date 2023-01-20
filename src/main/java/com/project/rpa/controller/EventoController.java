@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author usuario
  */
 @RestController
-@RequestMapping("/eventos/")
+@RequestMapping("/eventos")
 public class EventoController {
     
     @Autowired

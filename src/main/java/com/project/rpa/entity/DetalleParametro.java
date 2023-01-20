@@ -4,9 +4,16 @@
  */
 package com.project.rpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.project.rpa.entity.compuest.DetalleParametroPK;
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,9 +36,13 @@ import lombok.ToString;
 @ToString
 public class DetalleParametro {
 
+    /*@EmbeddedId
+   private DetalleParametroPK id;*/
 
-   @EmbeddedId
-   private DetalleParametroPK id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idDetalleParametro")
+    private Long id;
 
     private String valor;
 
@@ -39,5 +50,14 @@ public class DetalleParametro {
 
     private String observaciones;
 
-    
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "robot_idRobot", insertable = false, updatable = false)
+    private Robot robot;
+
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "parametro_idParametro", insertable = false, updatable = false)
+    private Parametro parametro;
+
 }

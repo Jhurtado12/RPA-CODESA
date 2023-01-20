@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author usuario
  */
 @RestController
-@RequestMapping("/roles/")
+@RequestMapping("/roles")
 public class RolesController {
     
     @Autowired
